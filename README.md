@@ -1,6 +1,6 @@
 # 🚀 Universal Video Downloader (Node.js + yt-dlp)
 
-A lightweight, high-performance CLI tool to download videos from thousands of websites (YouTube, Eporner, Vimeo, etc.) in the best possible quality (up to 4K/8K).
+A lightweight, high-performance CLI tool to download videos from thousands of websites in the best possible quality (up to 4K/8K).
 
 Built with **Node.js** as a wrapper around the powerful **yt-dlp** engine, featuring real-time progress bars and bypass capabilities for geo-blocked content using Cloudflare WARP.
 
@@ -53,7 +53,7 @@ npm install
 
 ## 🛡️ Bypassing ISP Blocks (Cloudflare WARP)
 
-For blocked websites, install Cloudflare WARP (free + unlimited).
+Install Cloudflare WARP (free + unlimited).
 
 ### 1. Install WARP
 
