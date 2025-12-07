@@ -4,6 +4,8 @@ A lightweight, high-performance CLI tool to download videos from thousands of we
 
 Built with **Node.js** as a wrapper around the powerful **yt-dlp** engine, featuring real-time progress bars and bypass capabilities for geo-blocked content using Cloudflare WARP.
 
+---
+
 ## ✨ Features
 
 - **Universal Support:** Works on thousands of sites supported by `yt-dlp`.
@@ -15,105 +17,95 @@ Built with **Node.js** as a wrapper around the powerful **yt-dlp** engine, featu
 
 ## 🛠️ Prerequisites (Linux/Ubuntu)
 
-Before running the script, you must install the core engines: **FFmpeg** (for processing) and **yt-dlp** (for downloading).
+Before running the script, install **FFmpeg** and **yt-dlp**.
 
-### 1. Install FFmpeg
-
-Required to merge high-quality video and audio streams (e.g., 1080p+).
+### Install FFmpeg
 
 ```bash
 sudo apt update && sudo apt install ffmpeg
+```
 
-sudo curl -L [https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp) -o /usr/local/bin/yt-dlp
+### Install yt-dlp
+
+```bash
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
 sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
 
-📦 Installation
-Clone the repository
+---
+
+## 📦 Installation
+
+### Clone the repository
 
 ```bash
-
-```
-
-git clone [https://github.com/yourusername/universal-downloader.git](https://github.com/yourusername/universal-downloader.git)
+git clone https://github.com/yourusername/universal-downloader.git
 cd universal-downloader
-
 ```
 
-```
-
-Install Dependencies
+### Install Dependencies
 
 ```bash
-
-```
-
 npm install
-
 ```
 
-```
+---
 
-🛡️ Bypassing ISP Blocks (Cloudflare WARP)
-If your ISP blocks specific websites (e.g., Eporner, Torrent sites), use Cloudflare WARP. It is free, unlimited, and faster than traditional VPNs.
+## 🛡️ Bypassing ISP Blocks (Cloudflare WARP)
 
-1. Install WARP
+For blocked websites, install Cloudflare WARP (free + unlimited).
+
+### 1. Install WARP
 
 ```bash
+# Add key
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
 
-```
-
-# Add GPG Key
-
-curl -fsSL [https://pkg.cloudflareclient.com/pubkey.gpg](https://pkg.cloudflareclient.com/pubkey.gpg) | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
-
-# Add Repo
-
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] [https://pkg.cloudflareclient.com/](https://pkg.cloudflareclient.com/) $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+# Add repo
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 
 # Install
-
 sudo apt-get update && sudo apt-get install cloudflare-warp
-
 ```
 
-```
-
-2. Register (Run once)
+### 2. Register WARP
 
 ```bash
-
-```
-
 warp-cli registration new
-
 ```
 
+### 3. Usage Commands
+
+| Action       | Command                                         |
+| ------------ | ----------------------------------------------- |
+| Turn ON      | `warp-cli connect`                              |
+| Turn OFF     | `warp-cli disconnect`                           |
+| Check Status | `curl https://www.cloudflare.com/cdn-cgi/trace` |
+
+**warp=on → safe to download**
+
+---
+
+## ▶️ Usage
+
+Set your URL in the script:
+
+```js
+const url = "https://example.com/video-link";
 ```
 
-3. Usage Commands
+Run:
 
-Action,Command
-Connect (Turn ON),warp-cli connect
-Disconnect (Turn OFF),warp-cli disconnect
-Check Status,curl https://www.cloudflare.com/cdn-cgi/trace
-
-Tip: If the trace command shows warp=on, you are safe to download.
-
-Tip: If the trace command shows warp=on, you are safe to download.
-const url = '[https://example.com/video-link](https://example.com/video-link)';
-
-Run the downloader:
-
+```bash
 node index.js
+```
 
-The video will be saved to your Downloads folder (or whichever path is set in the script).
+Your video will save to the Downloads folder (or configured path).
 
-⚖️ Disclaimer
-This tool is for educational and personal use only.
+---
 
-Do not use this tool to distribute copyrighted material.
+## ⚖️ Disclaimer
 
-Respect the Terms of Service of the websites you download from.
-
-The author is not responsible for any misuse of this software.
+This tool is for educational and personal use only.  
+Do not distribute copyrighted material or violate any website’s Terms of Service.  
+You are responsible for your usage.
