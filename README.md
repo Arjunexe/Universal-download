@@ -31,17 +31,37 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 📦 Installation
 Clone the repository
 
+```bash
+
+```
+
 git clone [https://github.com/yourusername/universal-downloader.git](https://github.com/yourusername/universal-downloader.git)
 cd universal-downloader
 
+```
+
+```
+
 Install Dependencies
 
+```bash
+
+```
+
 npm install
+
+```
+
+```
 
 🛡️ Bypassing ISP Blocks (Cloudflare WARP)
 If your ISP blocks specific websites (e.g., Eporner, Torrent sites), use Cloudflare WARP. It is free, unlimited, and faster than traditional VPNs.
 
 1. Install WARP
+
+```bash
+
+```
 
 # Add GPG Key
 
@@ -55,9 +75,21 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyr
 
 sudo apt-get update && sudo apt-get install cloudflare-warp
 
+```
+
+```
+
 2. Register (Run once)
 
+```bash
+
+```
+
 warp-cli registration new
+
+```
+
+```
 
 3. Usage Commands
 
