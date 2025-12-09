@@ -88,16 +88,10 @@ warp-cli registration new
 
 ## ▶️ Usage
 
-Set your URL in the script:
-
-```js
-const url = "https://example.com/video-link";
-```
-
 Run:
 
 ```bash
-node index.js
+node index.js [add your url herer]
 ```
 
 Your video will save to the Downloads folder (or configured path).
